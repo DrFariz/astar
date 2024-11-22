@@ -1,0 +1,14 @@
+name: Export Godot Project (backup)
+
+on:
+  workflow_dispatch
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Godot Android export
+        uses: dulvui/godot-android-export@v4
+        with:
+          godot-version: 4.2.2
