@@ -15,11 +15,3 @@ jobs:
         uses: dulvui/godot-android-export@v4
         with:
           godot-version: 4.2.1
-      
-      - name: ls
-        run: |
-          pwd
-          echo "-----"
-          ls -a /home/runner/work/astar/astar
-          echo "-----"
-          ls -a
