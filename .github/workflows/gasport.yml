@@ -1,7 +1,7 @@
 name: gasport
 
 on:
-  workflow_dispatch
+  push
 
 jobs:
   export_game:
@@ -16,7 +16,10 @@ jobs:
       # your project is available for Godot to export
     - name: checkout
       uses: actions/checkout@v4
-  
+    
+    - name: Set up Android SDK
+      uses: android-actions/setup-android@v2
+
     - name: export game
       id: export
       # Use latest version (see releases for all versions)
