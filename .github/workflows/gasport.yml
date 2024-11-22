@@ -14,5 +14,10 @@ jobs:
           godot-version: 4.2.1
           working-directory: "/home/runner/work/astar/astar"
       
-      - name:
-        run: ls -a
+      - name: ls
+        run: |
+          pwd
+          echo "-----"
+          ls -a /home/runner/work/astar/astar
+          echo "-----"
+          ls -a
