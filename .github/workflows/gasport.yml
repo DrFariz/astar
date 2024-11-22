@@ -8,11 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
       - name: Godot Android export
         uses: dulvui/godot-android-export@v4
         with:
           godot-version: 4.2.1
-          working-directory: "/home/runner/work/astar/astar"
       
       - name: ls
         run: |
