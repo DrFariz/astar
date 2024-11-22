@@ -11,4 +11,4 @@ jobs:
       - name: Godot Android export
         uses: dulvui/godot-android-export@v4
         with:
-          godot-version: 4.2.2
+          godot-version: 4.2.1
