@@ -1,4 +1,4 @@
-name: Export Godot Project (backup)
+name: gasport
 
 on:
   workflow_dispatch
@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-    
-      - name: Godot Android export
-        uses: dulvui/godot-android-export@v4
+      - uses: actions/checkout@v2
+      - uses: croconut/godot-multi-builder@v1
+        id: builds
         with:
-          godot-version: 4.2.1
+          names: "Android"
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: my-builds
+          path: builds/builds.zip
