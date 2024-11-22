@@ -20,6 +20,11 @@ jobs:
     - name: Set up Android SDK
       uses: android-actions/setup-android@v2
 
+    - name: keytool
+      run: |
+        keytool -genkey -v -keystore release.keystore -alias yourreleaseuser -keyalg RSA -keysize 2048 -validity 10000 -storepass yourreleasepassword -keypass yourreleasepassword -dname "CN=Android Export,O=Android,C=US"
+        keytool -genkey -v -keystore debug.keystore -alias yourdebuguser -keyalg RSA -keysize 2048 -validity 10000 -storepass yourdebugpassword -keypass yourdebugpassword -dname "CN=Android Export,O=Android,C=US"
+
     - name: export game
       id: export
       # Use latest version (see releases for all versions)
