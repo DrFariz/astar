@@ -1,7 +1,6 @@
 name: Export Godot Project
 
 on:
-  push:
   workflow_dispatch:
     inputs:
       platform:
@@ -54,6 +53,8 @@ jobs:
         echo "GODOT_URL=https://download.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_linux.x86_32.zip" >> $GITHUB_ENV
         echo "TEMPLATES_URL=https://download.tuxfamily.org/godotengine/4.2.1/Godot_v4.2.1-stable_export_templates.tpz" >> $GITHUB_ENV
         echo "VERSION=4.2.1.stable" >> $GITHUB_ENV
+        sudo apt-get update
+        sudo apt-get install -y libfontconfig1 libudev1
 
     - name: Download Godot Export Templates
       run: |
